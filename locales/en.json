@@ -5,7 +5,7 @@
   "home.tips.ref": "Reference",
   "home.tips.demo": "Demo",
   "add.title": "Share",
-  "add.device": "Sharing options of the device",
+  "add.device": "Sharing options",
   "add.prompt.domain": "Please enter the domain of the server you want to share. (ex: {ex})",
   "add.prompt.go": "Share",
   "add.add-service": "Isn't there a site here that you use? {link}",

@@ -197,7 +197,6 @@ const Add = ({ t, link }) => {
             onClick={() =>
               onClick({
                 name: 'Device',
-                if: !!(process.browser && window?.navigator?.share),
                 icon: Share,
                 onClick(text, url) {
                   navigator.share({
@@ -251,7 +250,7 @@ const Add = ({ t, link }) => {
 };
 
 Add.propTypes = {
-  t: PropTypes.string.isRequired,
+  t: PropTypes.string,
   link: PropTypes.string
 };
 

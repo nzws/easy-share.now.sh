@@ -5,7 +5,7 @@
   "home.tips.ref": "リファレンス",
   "home.tips.demo": "デモ",
   "add.title": "共有する",
-  "add.device": "端末の共有オプション",
+  "add.device": "共有オプション",
   "add.prompt.domain": "あなたが共有するサーバーのドメインを入力してください（例: {ex}）",
   "add.prompt.go": "共有",
   "add.add-service": "あなたの使うサイトがここにありませんか？ {link}",

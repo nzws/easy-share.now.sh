@@ -29,26 +29,28 @@ const Container = styled.div`
   `};
 `;
 
-const Index = ({ hasParam }) => {
+const Index = ({ hasParam, ref }) => {
   const {
     query: { t, link }
   } = useRouter();
 
   return (
     <Container>
-      <div>{hasParam ? <Add t={t} link={link} /> : <Home />}</div>
+      <div>{hasParam ? <Add t={t} link={link || ref} /> : <Home />}</div>
     </Container>
   );
 };
 
-Index.getInitialProps = ({ query }) => {
+Index.getInitialProps = ({ query, req }) => {
   return {
-    hasParam: !!query.t || !!query.link
+    hasParam: !!query.t || !!query.link,
+    ref: req?.headers?.referer
   };
 };
 
 Index.propTypes = {
-  hasParam: PropTypes.bool
+  hasParam: PropTypes.bool,
+  ref: PropTypes.string
 };
 
 export default Index;
