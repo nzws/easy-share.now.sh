@@ -29,14 +29,14 @@ const Container = styled.div`
   `};
 `;
 
-const Index = ({ hasParam, ref }) => {
+const Index = ({ hasParam, referer }) => {
   const {
     query: { t, link }
   } = useRouter();
 
   return (
     <Container>
-      <div>{hasParam ? <Add t={t} link={link || ref} /> : <Home />}</div>
+      <div>{hasParam ? <Add t={t} link={link || referer} /> : <Home />}</div>
     </Container>
   );
 };
@@ -44,13 +44,13 @@ const Index = ({ hasParam, ref }) => {
 Index.getInitialProps = ({ query, req }) => {
   return {
     hasParam: !!query.t || !!query.link,
-    ref: req?.headers?.referer
+    referer: req?.headers?.referer
   };
 };
 
 Index.propTypes = {
   hasParam: PropTypes.bool,
-  ref: PropTypes.string
+  referer: PropTypes.string
 };
 
 export default Index;
