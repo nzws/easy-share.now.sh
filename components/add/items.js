@@ -5,20 +5,9 @@ import {
   Reddit,
   Hatenabookmark
 } from '@icons-pack/react-simple-icons';
-import { Share, Mail } from 'react-feather';
+import { Mail } from 'react-feather';
 
 const items = [
-  {
-    name: 'Device',
-    if: !!(process.browser && window?.navigator?.share),
-    icon: Share,
-    onClick(text, url) {
-      navigator.share({
-        url,
-        text
-      });
-    }
-  },
   {
     name: 'Mail',
     icon: Mail,
@@ -46,14 +35,16 @@ const items = [
       'mastodon.social',
       'mstdn.jp',
       'mastodon.cloud',
-      'best-friends.chat'
+      'best-friends.chat',
+      'fedibird.com',
+      'tooting.ai'
     ]
   },
   {
     name: 'Misskey',
     prompt: 'domain',
     link: 'https://{domain}/share?text={text}%20{link}',
-    suggestions: ['misskey.io']
+    suggestions: ['misskey.io', 'co.misskey.io']
   },
   {
     name: 'Reddit',

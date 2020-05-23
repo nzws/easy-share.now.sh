@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
 import { FormattedMessage } from 'react-intl';
-import { Box } from 'react-feather';
+import { Box, Share } from 'react-feather';
 import Link from 'next/link';
 import ExternalLink from '../external-link';
 import items from './items';
@@ -96,6 +96,13 @@ const Add = ({ t, link }) => {
   const [pmpt, setPrompt] = useState();
   const [inputValue, setInputValue] = useState('');
   const [storageSuggestions, setSS] = useState([]);
+  const [hasShareAPI, setHasShareAPI] = useState(false);
+
+  useEffect(() => {
+    if (window?.navigator?.share) {
+      setHasShareAPI(true);
+    }
+  }, []);
 
   const onClick = (item, isPrompt = false) => {
     if (item.onClick) {
@@ -185,12 +192,30 @@ const Add = ({ t, link }) => {
       )}
 
       <Items>
+        {hasShareAPI && (
+          <Item
+            onClick={() =>
+              onClick({
+                name: 'Device',
+                if: !!(process.browser && window?.navigator?.share),
+                icon: Share,
+                onClick(text, url) {
+                  navigator.share({
+                    url,
+                    text
+                  });
+                }
+              })
+            }
+          >
+            <div>
+              <Share className="icon" size={30} />
+              <FormattedMessage id="add.device" />
+            </div>
+          </Item>
+        )}
         {items.map(item => {
           const Icon = item.icon || Box;
-
-          if (item.if !== undefined && item.if !== true) {
-            return <React.Fragment key={item.name}></React.Fragment>;
-          }
 
           return (
             <Item key={item.name} onClick={() => onClick(item)}>
