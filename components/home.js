@@ -61,10 +61,10 @@ const Home = () => {
       </URL>
 
       <Tips>
-        <ExternalLink href="">
+        {/* <ExternalLink href="">
           <FormattedMessage id="home.tips.ref" />
         </ExternalLink>{' '}
-        /{' '}
+        /{' '} */}
         <Link href="/?t=Easy%20Share&link=https%3A%2F%2Feasy-share.now.sh">
           <a>
             <FormattedMessage id="home.tips.demo" />

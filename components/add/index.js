@@ -208,7 +208,7 @@ const Add = ({ t, link }) => {
           id="add.add-service"
           values={{
             link: (
-              <ExternalLink href="">
+              <ExternalLink href="https://github.com/nzws/easy-share.now.sh/issues">
                 <FormattedMessage id="add.add-service-link" />
               </ExternalLink>
             )
