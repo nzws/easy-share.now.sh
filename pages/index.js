@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import media from 'styled-media-query';
 import { useRouter } from 'next/router';
@@ -28,16 +29,26 @@ const Container = styled.div`
   `};
 `;
 
-const Index = () => {
+const Index = ({ hasParam }) => {
   const {
     query: { t, link }
   } = useRouter();
 
   return (
     <Container>
-      <div>{t ? <Add t={t} link={link} /> : <Home />}</div>
+      <div>{hasParam ? <Add t={t} link={link} /> : <Home />}</div>
     </Container>
   );
+};
+
+Index.getInitialProps = ({ query }) => {
+  return {
+    hasParam: !!query.t || !!query.link
+  };
+};
+
+Index.propTypes = {
+  hasParam: PropTypes.bool
 };
 
 export default Index;
