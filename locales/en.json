@@ -5,9 +5,9 @@
   "home.tips.ref": "Reference",
   "home.tips.demo": "Demo",
   "add.title": "Share",
-  "add.prompt.domain": "あなたが共有するサーバーのドメインを入力してください（例: {ex}）",
-  "add.prompt.go": "共有",
-  "add.add-service": "あなたの使うサイトがここにありませんか？ {link}",
-  "add.add-service-link": "提案してください！",
-  "add.your-site": "あなたのサイトにEasy Shareを追加する"
+  "add.prompt.domain": "Please enter the domain of the server you want to share. (ex: {ex})",
+  "add.prompt.go": "Share",
+  "add.add-service": "Isn't there a site here that you use? {link}",
+  "add.add-service-link": "Please make a suggestion!",
+  "add.your-site": "Add Easy Share to your site"
 }
