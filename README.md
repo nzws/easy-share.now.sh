@@ -1,0 +1,1 @@
+# easy-share.now.sh

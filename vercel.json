@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "alias": ["easy-share.now.sh"],
+  "regions": ["hnd1"],
+  "public": false,
+  "github": { "silent": true }
+}

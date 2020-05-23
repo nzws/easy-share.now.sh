@@ -1,0 +1,13 @@
+{
+  "home.description": "超簡単で多様な共有リンクを生成",
+  "home.description2": "広告なし、追跡なし、シンプル",
+  "home.tips.1": "text 及び link はURIエンコードをする必要があります。",
+  "home.tips.ref": "リファレンス",
+  "home.tips.demo": "デモ",
+  "add.title": "共有する",
+  "add.prompt.domain": "あなたが共有するサーバーのドメインを入力してください（例: {ex}）",
+  "add.prompt.go": "共有",
+  "add.add-service": "あなたの使うサイトがここにありませんか？ {link}",
+  "add.add-service-link": "提案してください！",
+  "add.your-site": "あなたのサイトにEasy Shareを追加する"
+}
