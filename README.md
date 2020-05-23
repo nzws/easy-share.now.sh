@@ -1,4 +1,4 @@
-![](https://i.imgur.com/FbgLjPl.png)
+![](https://i.imgur.com/9y5lIqY.png)
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/nzws/easy-share.now.sh/Node%20CI?style=for-the-badge)](https://github.com/nzws/easy-share.now.sh/actions)
 [![GitHub](https://img.shields.io/github/license/nzws/easy-share.now.sh?style=for-the-badge)](#license)
