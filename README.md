@@ -39,6 +39,7 @@ GET https://easy-share.now.sh/?t=<text>&link=<link>
 ✨Welcome✨
 
 - Add sharing service (`components/add/items.js`)
+  - It can be a local service in the country. (e.g. hatena bookmark is used in Japan.)
 - Add / update translate (`locales/*.json`)
 - Add new features, fix bugs, etc...
 
