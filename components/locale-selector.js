@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { MessageSquare } from 'react-feather';
-import { localeName, selectLocale } from '../locales/locales';
+import { useIntl } from 'react-intl';
+import { localeName } from '../locales/locales';
 
 const StyledLocale = styled.div`
   position: fixed;
@@ -22,15 +23,11 @@ const StyledLocale = styled.div`
 `;
 
 const LocaleSelector = () => {
-  const [selected, setSelected] = useState('');
-
-  useEffect(() => {
-    setSelected(selectLocale());
-  }, []);
+  const intl = useIntl();
 
   const onChange = e => {
     const newLang = e.target.value;
-    localStorage.setItem('es_lang', newLang);
+    document.cookie = `lang=${newLang}`;
     location.reload();
   };
 
@@ -38,7 +35,7 @@ const LocaleSelector = () => {
     <StyledLocale>
       <MessageSquare className="icon" size={18} />
 
-      <select value={selected} onChange={onChange}>
+      <select value={intl.locale} onChange={onChange}>
         {Object.keys(localeName).map(v => (
           <option value={v} key={v}>
             {localeName[v]}

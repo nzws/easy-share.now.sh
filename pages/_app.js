@@ -68,9 +68,7 @@ const GlobalStyle = createGlobalStyle({
   }
 });
 
-const App = ({ Component, pageProps }) => {
-  const locale = selectLocale();
-
+const App = ({ Component, pageProps, locale }) => {
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -85,9 +83,24 @@ const App = ({ Component, pageProps }) => {
   );
 };
 
+App.getInitialProps = async ({ Component, ctx }) => {
+  const locale = selectLocale(
+    ctx?.req?.headers['accept-language'],
+    ctx?.req?.headers.cookie
+  );
+  let pageProps = {};
+
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
+  }
+
+  return { pageProps, locale };
+};
+
 App.propTypes = {
   Component: PropTypes.func,
-  pageProps: PropTypes.object
+  pageProps: PropTypes.object,
+  locale: PropTypes.string
 };
 
 export default App;

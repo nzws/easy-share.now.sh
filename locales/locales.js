@@ -10,13 +10,16 @@ export const localeName = {
   ja: '日本語'
 };
 
-export const selectLocale = () => {
-  const selected = process.browser ? localStorage.getItem('es_lang') : null;
+export const selectLocale = (defLocale, cookie) => {
+  const selected = (process.browser ? document.cookie : cookie)
+    ?.split('; ')
+    .find(v => v.split('=')[0] === 'lang')
+    ?.split('=')[1];
 
   const browserLanguage = (
     (typeof navigator !== 'undefined' &&
       (navigator.browserLanguage || navigator.language)) ||
-    ''
+    defLocale
   )
     .toLowerCase()
     .substr(0, 2);
