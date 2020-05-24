@@ -4,7 +4,7 @@ import { IntlProvider } from 'react-intl';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Head from 'next/head';
 import { darken } from 'polished';
-import { localeData } from '../locales/locales';
+import { localeData, selectLocale } from '../locales/locales';
 
 import 'ress/dist/ress.min.css';
 
@@ -69,14 +69,7 @@ const GlobalStyle = createGlobalStyle({
 });
 
 const App = ({ Component, pageProps }) => {
-  const browserLanguage = (
-    (typeof navigator !== 'undefined' &&
-      (navigator.browserLanguage || navigator.language)) ||
-    ''
-  )
-    .toLowerCase()
-    .substr(0, 2);
-  const locale = (localeData[browserLanguage] && browserLanguage) || 'en';
+  const locale = selectLocale();
 
   return (
     <ThemeProvider theme={theme}>
