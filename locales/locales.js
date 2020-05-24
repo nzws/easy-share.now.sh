@@ -1,13 +1,13 @@
 export const localeData = {
-  ja: require('./ja'),
   en: require('./en'),
-  fr: require('./fr')
+  fr: require('./fr'),
+  ja: require('./ja')
 };
 
 export const localeName = {
-  ja: '日本語',
   en: 'English',
-  fr: 'français'
+  fr: 'français',
+  ja: '日本語'
 };
 
 export const selectLocale = () => {
