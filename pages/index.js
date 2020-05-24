@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import media from 'styled-media-query';
 import { useRouter } from 'next/router';
 
-import Add from '../components/add';
+import Share from '../components/share';
 import Home from '../components/home';
 
 const mobile = media.lessThan('small');
@@ -35,9 +35,13 @@ const Index = ({ hasParam, referer }) => {
   } = useRouter();
 
   return (
-    <Container>
-      <div>{hasParam ? <Add t={t} link={link || referer} /> : <Home />}</div>
-    </Container>
+    <>
+      <Container>
+        <div>
+          {hasParam ? <Share t={t} link={link || referer} /> : <Home />}
+        </div>
+      </Container>
+    </>
   );
 };
 

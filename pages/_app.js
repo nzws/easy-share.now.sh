@@ -4,6 +4,7 @@ import { IntlProvider } from 'react-intl';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Head from 'next/head';
 import { darken } from 'polished';
+import { localeData } from '../locales/locales';
 
 import 'ress/dist/ress.min.css';
 
@@ -67,12 +68,6 @@ const GlobalStyle = createGlobalStyle({
   }
 });
 
-const locales = {
-  ja: require('../locales/ja'),
-  en: require('../locales/en'),
-  fr: require('../locales/fr')
-};
-
 const App = ({ Component, pageProps }) => {
   const browserLanguage = (
     (typeof navigator !== 'undefined' &&
@@ -81,7 +76,7 @@ const App = ({ Component, pageProps }) => {
   )
     .toLowerCase()
     .substr(0, 2);
-  const locale = (locales[browserLanguage] && browserLanguage) || 'en';
+  const locale = (localeData[browserLanguage] && browserLanguage) || 'en';
 
   return (
     <ThemeProvider theme={theme}>
@@ -90,7 +85,7 @@ const App = ({ Component, pageProps }) => {
       </Head>
       <GlobalStyle />
 
-      <IntlProvider locale={locale} messages={locales[locale]}>
+      <IntlProvider locale={locale} messages={localeData[locale]}>
         <Component {...pageProps} />
       </IntlProvider>
     </ThemeProvider>

@@ -92,7 +92,7 @@ const replaceRunner = (text, values = {}) => {
   return text;
 };
 
-const Add = ({ t, link }) => {
+const SharePage = ({ t, link }) => {
   const [pmpt, setPrompt] = useState();
   const [inputValue, setInputValue] = useState('');
   const [storageSuggestions, setSS] = useState([]);
@@ -249,9 +249,9 @@ const Add = ({ t, link }) => {
   );
 };
 
-Add.propTypes = {
+SharePage.propTypes = {
   t: PropTypes.string,
   link: PropTypes.string
 };
 
-export default Add;
+export default SharePage;
