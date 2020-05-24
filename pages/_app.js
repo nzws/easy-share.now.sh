@@ -69,7 +69,8 @@ const GlobalStyle = createGlobalStyle({
 
 const locales = {
   ja: require('../locales/ja'),
-  en: require('../locales/en')
+  en: require('../locales/en'),
+  fr: require('../locales/fr')
 };
 
 const App = ({ Component, pageProps }) => {
