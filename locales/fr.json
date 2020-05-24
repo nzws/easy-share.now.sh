@@ -1,0 +1,14 @@
+{
+  "home.description": "Générer très facilement divers liens de partage",
+  "home.description2": "Pas de pubs, Pas de suivi, Simple",
+  "home.tips.1": "Le text et le lien devraient être URI encodé.",
+  "home.tips.ref": "Référence",
+  "home.tips.demo": "Démo",
+  "add.title": "Partager",
+  "add.device": "Options de partage",
+  "add.prompt.domain": "S'il vous plaît, Veuillez saisir le domaine du serveur que vous souhaitez partager. (ex: {ex})",
+  "add.prompt.go": "Partager",
+  "add.add-service": "N'y a-t-il pas ici un site que vous utilisez? {lien}",
+  "add.add-service-link": "S'il vous plaît, Veuillez faire une suggestion!",
+  "add.your-site": "Ajouter Easy Share à votre site"
+}
