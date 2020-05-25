@@ -1,0 +1,14 @@
+{
+  "home.description": "生成非常简单、多样的分享链接",
+  "home.description2": "无广告、无追踪、简单",
+  "home.tips.1": "文本和链接必须采用URI编码。",
+  "home.tips.ref": "参考",
+  "home.tips.demo": "演示",
+  "add.title": "分享",
+  "add.device": "分享选项",
+  "add.prompt.domain": "请输入你要分享的服务器的域名。(例: {ex})",
+  "add.prompt.go": "分享",
+  "add.add-service": "在你的列表中没有看到你使用的网站？ {link}",
+  "add.add-service-link": "请大家提个建议吧！",
+  "add.your-site": "添加Easy Share到您的网站"
+}

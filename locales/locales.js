@@ -1,7 +1,8 @@
 export const localeName = {
   en: 'English',
-  fr: 'français',
-  ja: '日本語'
+  fr: 'Français',
+  ja: '日本語',
+  zh: '中文'
 };
 
 export const selectLocale = (defLocale, cookie) => {
