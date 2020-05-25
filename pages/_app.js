@@ -56,6 +56,11 @@ const GlobalStyle = createGlobalStyle({
     margin: '5px 0',
     color: ({ theme: { text } }) => text
   },
+  '.icon': {
+    position: 'relative',
+    top: '3px',
+    color: ({ theme: { text } }) => text
+  },
   '*, *:after, *:before': {
     boxSizing: 'border-box',
     transition: '100ms ease',
@@ -63,10 +68,6 @@ const GlobalStyle = createGlobalStyle({
     scrollbarColor: ({ theme: { background } }) =>
       `${darken(0.2, background)} ${background}`,
     scrollbarWidth: 'thin'
-  },
-  '.icon': {
-    position: 'relative',
-    top: '3px'
   },
   '::-webkit-scrollbar': {
     width: '6px',
