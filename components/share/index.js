@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { darken, lighten } from 'polished';
 import { FormattedMessage } from 'react-intl';
 import { Box, Share } from 'react-feather';
 import Link from 'next/link';
@@ -13,14 +12,15 @@ const Preview = styled.div`
   text-align: left;
   margin: 20px auto 10px;
   padding: 10px;
-  background: ${({ theme: { background } }) => darken(0.1, background)};
-  color: ${({ theme: { text } }) => lighten(0.2, text)};
+  background: ${({ theme: { background, darken } }) => darken(0.1, background)};
+  color: ${({ theme: { text, lighten } }) => lighten(0.2, text)};
 `;
 
 const Prompt = styled.div`
   margin: 10px 0;
   padding: 10px;
-  background: ${({ theme: { background } }) => darken(0.05, background)};
+  background: ${({ theme: { background, darken } }) =>
+    darken(0.05, background)};
 
   b {
     display: block;
@@ -44,7 +44,8 @@ const Prompt = styled.div`
     color: #fff;
 
     :hover {
-      background: ${({ theme: { linkBase } }) => darken(0.05, linkBase)};
+      background: ${({ theme: { linkBase, darken } }) =>
+        darken(0.05, linkBase)};
     }
   }
 `;
@@ -67,9 +68,11 @@ const Item = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: ${({ theme: { text } }) => text};
 
   :hover {
-    background: ${({ theme: { background } }) => darken(0.1, background)};
+    background: ${({ theme: { background, darken } }) =>
+      darken(0.1, background)};
   }
 
   .icon {
@@ -80,7 +83,7 @@ const Item = styled.div`
 
 const Tips = styled.div`
   font-size: 0.8rem;
-  color: ${({ theme: { text } }) => lighten(0.2, text)};
+  color: ${({ theme: { text, lighten } }) => lighten(0.2, text)};
 `;
 
 const replaceRunner = (text, values = {}) => {

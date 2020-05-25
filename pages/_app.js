@@ -3,18 +3,27 @@ import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Head from 'next/head';
-import { darken } from 'polished';
+import withDarkMode, { useDarkMode } from 'next-dark-mode';
+import { darken, lighten } from 'polished';
+import { parseCookies } from 'nookies';
 import { localeData, selectLocale } from '../locales/locales';
 
 import 'ress/dist/ress.min.css';
 
-const background = '#e3e3e3';
-const text = '#030303';
-const linkBase = '#2986ff';
-const theme = {
-  linkBase,
-  background,
-  text
+const lightTheme = {
+  linkBase: '#2986ff',
+  background: '#e3e3e3',
+  text: '#030303',
+  lighten: lighten,
+  darken: darken
+};
+
+const darkTheme = {
+  linkBase: '#2986ff',
+  background: '#121212',
+  text: '#e3e3e3',
+  lighten: darken,
+  darken: lighten
 };
 
 const GlobalStyle = createGlobalStyle({
@@ -44,11 +53,12 @@ const GlobalStyle = createGlobalStyle({
   },
   'h1, h2, h3': {
     fontWeight: 600,
-    margin: '5px 0'
+    margin: '5px 0',
+    color: ({ theme: { text } }) => text
   },
   '*, *:after, *:before': {
     boxSizing: 'border-box',
-    transition: '200ms ease',
+    transition: '100ms ease',
     outline: 0,
     scrollbarColor: ({ theme: { background } }) =>
       `${darken(0.2, background)} ${background}`,
@@ -69,8 +79,10 @@ const GlobalStyle = createGlobalStyle({
 });
 
 const App = ({ Component, pageProps, locale }) => {
+  const { darkModeActive } = useDarkMode();
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={darkModeActive ? darkTheme : lightTheme}>
       <Head>
         <title>Easy Share</title>
       </Head>
@@ -86,7 +98,7 @@ const App = ({ Component, pageProps, locale }) => {
 App.getInitialProps = async ({ Component, ctx }) => {
   const locale = selectLocale(
     ctx?.req?.headers['accept-language'],
-    ctx?.req?.headers.cookie
+    parseCookies(ctx)
   );
   let pageProps = {};
 
@@ -103,4 +115,4 @@ App.propTypes = {
   locale: PropTypes.string
 };
 
-export default App;
+export default withDarkMode(App);

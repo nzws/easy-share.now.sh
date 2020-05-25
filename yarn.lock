@@ -45,6 +45,11 @@
   dependencies:
     cross-fetch "3.0.4"
 
+"@assortment/darkmodejs@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@assortment/darkmodejs/-/darkmodejs-1.2.0.tgz#4580dab94a85476cd68b3050368a40fdb2bae63a"
+  integrity sha512-tjTH0romXK/J7ftve93cWmgIJ7djK8ZL75P60/YG0VOMwSYG3EWfxRX/hDpmyAHbxu1aryQVK1IhFgq8/w0+QA==
+
 "@babel/code-frame@7.8.3", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5", "@babel/code-frame@^7.8.3":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.8.3.tgz#33e25903d7481181534e12ec0a25f16b6fcf419e"
@@ -2181,6 +2186,11 @@ cookie@0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.4.0.tgz#beb437e7022b3b6d49019d088665303ebe9c14ba"
   integrity sha512-+Hp8fLp57wnUSt0tY0tHEXh4voZRDnoIrZPqlo3DPiI4y9lwg/jqx+1Om94/W6ZaPDOUbnjOt/99w66zk+l1Xg==
+
+cookie@^0.4.0:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.4.1.tgz#afd713fe26ebd21ba95ceb61f9a8116e50a537d1"
+  integrity sha512-ZwrFkGJxUR3EIoXtO+yVE69Eb7KlixbaeAWfBQB9vVsNn/o+Yw69gBWSSDK825hQNdN+wF8zELf3dFNl/kxkUA==
 
 copy-concurrently@^1.0.0:
   version "1.0.5"
@@ -4466,6 +4476,14 @@ neo-async@2.6.1, neo-async@^2.5.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
+next-dark-mode@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/next-dark-mode/-/next-dark-mode-2.2.4.tgz#dd11cfc03970e1f70231b08518e66068ef04b3a6"
+  integrity sha512-xJVYsv0ZRgsz7VFB2MnJ8mrFjssaPvcUqjhJhS5TGSWUnp5n18kPfpAfc5Clq88CJFrdXFz1e5zVsDh6JPEQxg==
+  dependencies:
+    "@assortment/darkmodejs" "^1.2.0"
+    nookies "^2.3.0"
+
 next-tick@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
@@ -4584,6 +4602,14 @@ node-releases@^1.1.53:
   version "1.1.56"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.56.tgz#bc054a417d316e3adac90eafb7e1932802f28705"
   integrity sha512-EVo605FhWLygH8a64TjgpjyHYOihkxECwX1bHHr8tETJKWEiWS2YJjPbvsX2jFjnjTNEgBCmk9mLjKG1Mf11cw==
+
+nookies@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/nookies/-/nookies-2.3.0.tgz#56726ff10a6455820e4ff0d11602c3af2b21a0cb"
+  integrity sha512-qet6azxnYVeojj4O9qmm0pL8yp8QWrnPQZxS8aZED5s1vGQmhLhoWK4iYS1NDL6ajhpgHzCMPYjqsWSH83xvQw==
+  dependencies:
+    cookie "^0.4.0"
+    set-cookie-parser "^2.4.3"
 
 normalize-html-whitespace@1.0.0:
   version "1.0.0"
@@ -5985,6 +6011,11 @@ serve-static@1.14.1:
     escape-html "~1.0.3"
     parseurl "~1.3.3"
     send "0.17.1"
+
+set-cookie-parser@^2.4.3:
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/set-cookie-parser/-/set-cookie-parser-2.4.5.tgz#94a5060724e614c56c65588010594dc4b848fb8d"
+  integrity sha512-LkSDwseogN5l6TerqGzFzL9mUDTxSq3hX2b5AaynjC1nSCNWiDypEgHatfc0v6KcnfgV3/6F6h4ABh6igjzlQQ==
 
 set-value@^2.0.0, set-value@^2.0.1:
   version "2.0.1"

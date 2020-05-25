@@ -11,10 +11,7 @@ export const localeName = {
 };
 
 export const selectLocale = (defLocale, cookie) => {
-  const selected = (process.browser ? document.cookie : cookie)
-    ?.split('; ')
-    .find(v => v.split('=')[0] === 'lang')
-    ?.split('=')[1];
+  const selected = cookie.lang;
 
   const browserLanguage = (
     (typeof navigator !== 'undefined' &&

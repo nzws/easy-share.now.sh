@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { darken, lighten } from 'polished';
 import { FormattedMessage } from 'react-intl';
 import Link from 'next/link';
 import ExternalLink from './external-link';
@@ -11,7 +10,7 @@ const Head = styled.div`
   letter-spacing: 2px;
 
   p {
-    color: ${({ theme: { text } }) => lighten(0.5, text)};
+    color: ${({ theme: { text, lighten } }) => lighten(0.5, text)};
   }
 
   a {
@@ -26,14 +25,14 @@ const URL = styled.code`
   display: block;
   margin: 20px auto 10px;
   padding: 10px;
-  background: ${({ theme: { background } }) => darken(0.1, background)};
-  color: ${({ theme: { text } }) => lighten(0.2, text)};
+  background: ${({ theme: { background, darken } }) => darken(0.1, background)};
+  color: ${({ theme: { text, lighten } }) => lighten(0.2, text)};
 `;
 
 const Tips = styled.div`
   text-align: left;
   font-size: 0.8rem;
-  color: ${({ theme: { text } }) => lighten(0.2, text)};
+  color: ${({ theme: { text, lighten } }) => lighten(0.2, text)};
 `;
 
 const bracket = t => `<${t}>`;

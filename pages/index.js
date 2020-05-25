@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 
 import Share from '../components/share';
 import Home from '../components/home';
-import LocaleSelector from '../components/locale-selector';
+import Settings from '../components/settings';
 
 const mobile = media.lessThan('small');
 const desktop = media.greaterThan('small');
@@ -43,7 +43,7 @@ const Index = ({ hasParam, referer }) => {
         </div>
       </Container>
 
-      <LocaleSelector />
+      <Settings />
     </>
   );
 };
