@@ -1,9 +1,3 @@
-export const localeData = {
-  en: require('./en'),
-  fr: require('./fr'),
-  ja: require('./ja')
-};
-
 export const localeName = {
   en: 'English',
   fr: 'français',
@@ -21,7 +15,7 @@ export const selectLocale = (defLocale, cookie) => {
     .toLowerCase()
     .substr(0, 2);
   const locale =
-    selected || (localeData[browserLanguage] && browserLanguage) || 'en';
+    selected || (localeName[browserLanguage] && browserLanguage) || 'en';
 
   return locale;
 };

@@ -6,7 +6,7 @@ import Head from 'next/head';
 import withDarkMode, { useDarkMode } from 'next-dark-mode';
 import { darken, lighten } from 'polished';
 import { parseCookies } from 'nookies';
-import { localeData, selectLocale } from '../locales/locales';
+import { selectLocale } from '../locales/locales';
 
 import 'ress/dist/ress.min.css';
 
@@ -89,7 +89,10 @@ const App = ({ Component, pageProps, locale }) => {
       </Head>
       <GlobalStyle />
 
-      <IntlProvider locale={locale} messages={localeData[locale]}>
+      <IntlProvider
+        locale={locale}
+        messages={require(`../locales/${locale}.json`)}
+      >
         <Component {...pageProps} />
       </IntlProvider>
     </ThemeProvider>
