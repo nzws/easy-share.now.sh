@@ -9,15 +9,17 @@ export const localeName = {
 export const selectLocale = (defLocale, cookie) => {
   const selected = cookie.lang;
 
-  const browserLanguage = (
+  const browserLanguage =
     (typeof navigator !== 'undefined' &&
       (navigator.browserLanguage || navigator.language)) ||
-    defLocale
-  )
-    .toLowerCase()
-    .substr(0, 2);
+    defLocale;
   const locale =
-    selected || (localeName[browserLanguage] && browserLanguage) || 'en';
+    selected ||
+    (localeName[browserLanguage.substr(0, 5)] &&
+      browserLanguage.substr(0, 5)) ||
+    (localeName[browserLanguage.toLowerCase().substr(0, 2)] &&
+      browserLanguage.toLowerCase().substr(0, 2)) ||
+    'en';
 
   return locale;
 };
