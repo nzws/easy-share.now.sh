@@ -1,0 +1,14 @@
+{
+  "home.description": "生成非常簡單、多樣的分享連結",
+  "home.description2": "無廣告、無追蹤、簡單",
+  "home.tips.1": "文本和連結必須採用 URI 編碼。",
+  "home.tips.ref": "參考",
+  "home.tips.demo": "範例",
+  "add.title": "分享",
+  "add.device": "分享選項",
+  "add.prompt.domain": "請輸入你要分享的伺服器的域名。（例：{ex}）",
+  "add.prompt.go": "分享",
+  "add.add-service": "在列表中沒有看到你使用的網站？{link}",
+  "add.add-service-link": "請提個建議吧！",
+  "add.your-site": "新增 Easy Share 到你的網站"
+}
